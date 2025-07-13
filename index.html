@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SoulSpeak - Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>SoulSpeak</h1>
+    <nav>
+      <a onclick="showSection('home')">Home</a>
+      <a onclick="showSection('user-dashboard')">User Dashboard</a>
+      <a onclick="showSection('admin-dashboard')">Admin Dashboard</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2>Welcome to SoulSpeak</h2>
+      <p>Connect anonymously and safely with people who understand your feelings.</p>
+      <button class="btn" onclick="goToUserDashboard()">Enter User Dashboard</button>
+    </section>
+
+    <section id="user-dashboard" class="hidden">
+      <h2>User Dashboard</h2>
+      <p>Nickname: <span id="nicknameDisplay"></span></p>
+      <button class="btn" onclick="showSection('chat-page')">Start Chat</button>
+      <button class="btn" onclick="showSection('friend-request-demo')">Friend Requests</button>
+      <button class="btn" onclick="showSection('unfriend-demo')">Unfriend</button>
+    </section>
+
+    <section id="admin-dashboard" class="hidden">
+      <h2>Admin Dashboard</h2>
+      <p>Total Users: 123</p>
+      <p>Active Sessions: 5</p>
+      <p>Flagged Conversations: 2</p>
+      <button class="btn" onclick="alert('Report page coming soon!')">View Reports</button>
+    </section>
+
+    <section id="chat-page" class="hidden">
+      <h2>Chat with Stranger</h2>
+      <div class="chat-window" id="chatWindow">
+        <div class="message you">You: Hi there!</div>
+        <div class="message stranger">Stranger: Hello! How are you feeling?</div>
+      </div>
+      <input type="text" id="chatInput" placeholder="Type your message..." />
+      <button class="btn" onclick="sendMessage()">Send</button>
+      <br /><br />
+      <button class="btn" onclick="showSection('user-dashboard')">End Chat</button>
+    </section>
+
+    <section id="friend-request-demo" class="hidden">
+      <h2>Friend Request Demo</h2>
+      <p>You have a new friend request from <strong>HopefulSoul999</strong>.</p>
+      <button class="btn">Accept</button>
+      <button class="btn">Decline</button>
+      <br /><br />
+      <button class="btn" onclick="showSection('user-dashboard')">Back to Dashboard</button>
+    </section>
+
+    <section id="unfriend-demo" class="hidden">
+      <h2>Unfriend Demo</h2>
+      <p>You are currently friends with <strong>KindSpirit321</strong>.</p>
+      <button class="btn">Unfriend</button>
+      <br /><br />
+      <button class="btn" onclick="showSection('user-dashboard')">Back to Dashboard</button>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 SoulSpeak | All rights reserved
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
